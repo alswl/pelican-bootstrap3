@@ -3,13 +3,13 @@
 
 {% block content %}
     <section>
-        <h1>Tags for {{ SITENAME }}</h1>
         <article class="article-detail">
-          <ul>
-              {%- for tag, articles in tags|sort %}
-                  <li><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a> ({{ articles|count }})</li>
-              {% endfor %}
-          </ul>
-        </article>
+          <h1 class="text-center">Tags for {{ SITENAME }}</h1>
+            <ul>
+                {%- for tag, articles in tags|sort %}
+                    <li><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a> ({{ articles|count }})</li>
+                {% endfor %}
+            </ul>
+      </article>
     </section>
 {% endblock %}
