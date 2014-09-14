@@ -1,22 +1,4 @@
-{% extends "base.html" %}
-{% block content %}
-    {% if articles %}
-        {% for article in (articles_page.object_list if articles_page else articles) %}
-            <article class="article-list">
-                <div class="title">
-                  <h2 class="text-center"><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
-                </div>
-                <div class="summary">{{ article.summary }}
-                    {# Uncomment if you want to show comment counts #}
-                    {#{% include 'includes/comment_count.html' %}#}
-                    <p class="text-right">
-                      <a class="btn btn-default btn-lg" href="{{ SITEURL }}/{{ article.url }}"><i class="icon-circle-arrow-right"></i>more ...</a>
-                    </p>
-                </div>
-            </article>
-            <hr/>
-        {% endfor %}
-    {% endif %}
+{% extends "article_list.html" %}
 
-    {% include 'pagination.html' %}
-{% endblock content %}
+{% block canonical_rel %}<link rel="canonical" href="{{ SITEURL }}">{% endblock %}
+
