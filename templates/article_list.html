@@ -11,8 +11,8 @@
                 {% endif %}
                 <div class="summary">{{ article.summary }}
                     {% include 'includes/comment_count.html' %}
-                    <a class="btn btn-default btn-lg" href="{{ SITEURL }}/{{ article.url }}"><i class="icon-circle-arrow-right"></i>more ...</a>
                 </div>
+                <a class="btn btn-default btn-lg" href="{{ SITEURL }}/{{ article.url }}"><i class="icon-circle-arrow-right"></i>more ...</a>
             </article>
             <hr/>
         {% endfor %}
