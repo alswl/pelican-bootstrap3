@@ -116,7 +116,7 @@ a, a:hover {
     border-bottom: 1px solid;
 }
 
-.entry-content img, article-list .summary img {
+.entry-content img, article-list img.summary img {
     max-width: 100%;
     height: auto;
 }
