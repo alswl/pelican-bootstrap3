@@ -34,12 +34,12 @@ article h2, article h3, article h4, article h5, article h6 {
 	padding-bottom: 0.3em;
 }
 
-article p, article li, article dd, article dt, article form input {
+article p, article li, article dd, article dt, article form input, article table {
 	font-size: 16px;
 	line-height: 200%;
 }
 
-article p,  article pre, article blockquote {
+article p,  article pre, article blockquote, article table {
 	margin-bottom: 1em;
 }
 
@@ -53,6 +53,39 @@ article .summary > ul, article .summary > ol, article #toc > ul, article #toc > 
 
 .article-detail .panel-body {
 	padding-left: 0px;
+}
+
+
+article table {
+	padding: 0;
+}
+article table tr {
+	border-top: 1px solid #cccccc;
+	background-color: white;
+	margin: 0;
+	padding: 0;
+}
+article table tr:nth-child(2n) {
+	background-color: #f8f8f8;
+}
+article table tr th {
+	font-weight: bold;
+	border: 1px solid #cccccc;
+	text-align: left;
+	margin: 0;
+	padding: 6px 13px;
+}
+article table tr td {
+	border: 1px solid #cccccc;
+	text-align: left;
+	margin: 0;
+	padding: 6px 13px;
+}
+article table tr th :first-child, article table tr td :first-child {
+	margin-top: 0;
+}
+article table tr th :last-child, article table tr td :last-child {
+	margin-bottom: 0;
 }
 
 #sidebar .list-group, #sidebar .list-group-item {
