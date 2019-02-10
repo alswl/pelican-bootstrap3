@@ -20,18 +20,38 @@
                 <li class="prev"><a href="{{ SITEURL }}/{{ articles_previous_page.url }}">&laquo;</a>
                 </li>
             {% else %}
-                <li class="prev disabled"><a href="#">&laquo;</a></li>
+                <li class="prev disabled"><a href="javascript:;">&laquo;</a></li>
+			{% endif %}
+			{# 1 #}
+			{% if articles_paginator.num_pages >= 0 %}
+				<li class="{{ 'active' if 1 == articles_page.number else '' }}"><a
+					href="{{ SITEURL }}/{{ page_name if page_name != 'index' else '' }}">{{ 1 }}</a></li>
             {% endif %}
-            {% for num in range( 1, 1 + articles_paginator.num_pages ) %}
-                    <li class="{{ 'active' if num == articles_page.number else '' }}"><a
-							href="{{ SITEURL }}/{{ page_name if page_name != 'index' else '' }}{{ 'page/' ~ num ~ '/' if num > 1 else '' }}">{{ num }}</a></li>
-                {% endfor %}
+			{# . #}
+			{% if articles_page.number > 5 + 1 + 1 %}
+				<li class="disabled"><a href="">&hellip;</a></li>
+            {% endif %}
+            {% for num in range( [2, articles_page.number - 5] | max , [articles_paginator.num_pages, articles_page.number + 5 + 1] | min ) %}
+				<li class="{{ 'active' if num == articles_page.number else '' }}"><a
+						href="{{ SITEURL }}/{{ page_name if page_name != 'index' else '' }}{{ 'page/' ~ num ~ '/' if num > 1 else '' }}">{{ num }}</a></li>
+			{% endfor %}
+			{# . #}
+			{% if articles_paginator.num_pages - articles_page.number >= 5 + 1 + 1 %}
+				<li class="disabled"><a href="">&hellip;</a></li>
+            {% endif %}
+			{# last #}
+			{% if articles_paginator.num_pages > 5 + 1 %}
+				<li class="{{ 'active' if articles_page.number == articles_paginator.num_pages else '' }}"><a
+					href="{{ SITEURL }}/{{ page_name if page_name != 'index' else '' }}{{ 'page/' ~ articles_paginator.num_pages ~ '/' if articles_paginator.num_pages > 1 else '' }}">{{ articles_paginator.num_pages }}</a></li>
+            {% endif %}
             {% if articles_page.has_next() %}
                 <li class="next"><a
                         href="{{ SITEURL }}/{{ articles_next_page.url }}">&raquo;</a></li>
             {% else %}
-                <li class="next disabled"><a href="#">&raquo;</a></li>
+                <li class="next disabled"><a href="javascript:;">&raquo;</a></li>
             {% endif %}
         </ul>
     {% endif %}
 {% endif %}
+
+{# vim: set ft=jinja: #}
