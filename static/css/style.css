@@ -244,3 +244,11 @@ figure.floatcenter, .align-center {
 .tagcloud li {
     padding: 0px;
 }
+
+#content nav {
+    float: right;
+    display: flex;
+    position: fixed;
+    left: 0px;
+    top: 110px;
+}
