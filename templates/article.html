@@ -76,6 +76,11 @@
                         {{ article.title }}
                     </a>
                 </h1>
+                {% if article.toc %}
+                <nav class="toc col-lg-2">
+                  {{ article.toc }}
+                </nav>
+                {% endif %}
             </header>
             <div class="entry-content">
                 <div class="panel">
@@ -83,11 +88,6 @@
                         {% include "includes/article_info.html" %}
                     </div>
                 </div>
-                {% if article.toc %}
-                <nav class="toc col-lg-2">
-                  {{ article.toc }}
-                </nav>
-                {% endif %}
                 {{ article.content }}
             </div>
             <!-- /.entry-content -->

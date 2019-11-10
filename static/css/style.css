@@ -43,7 +43,7 @@ article p,  article pre, article blockquote, article table {
 	margin-bottom: 1em;
 }
 
-article p, article li, article dd, article dt, article form input, article table, article pre, article blockquote, article div {
+article .entry-content p, article .entry-content pre, article .entry-content blockquote, article .entry-content div {
 	overflow-x: scroll;
 }
 
@@ -53,6 +53,7 @@ article .entry-content > ul, article .entry-content > ol {
 
 article .summary > ul, article .summary > ol, article #toc > ul, article #toc > ol {
 	margin-bottom: 1em;
+	list-style: none;
 }
 
 .article-detail .panel-body {
